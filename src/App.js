@@ -8,7 +8,7 @@ class App extends  Component {
       super();
       this.state={
         monsters:[],
-        searchFieled: ''
+        searchField: ''
       };
     }
 componentDidMount() {
@@ -21,17 +21,17 @@ componentDidMount() {
   ));
 }
   onSearchChange=(event)=>{
-  const searchFieled=event.target.value.toLocaleLowerCase();
+  const searchField=event.target.value.toLocaleLowerCase();
   this.setState(()=>{
-  return {searchFieled};
+  return {searchField};
   });
 }
     render() 
     {
-      const{monsters,searchFieled}=this.state;
+      const{monsters,searchField}=this.state;
       const{onSearchChange}=this;
       const filteredMonsters=monsters.filter((monster)=>{
-      return monster.name.toLocaleLowerCase().includes(searchFieled);
+      return monster.name.toLocaleLowerCase().includes(searchField);
         });
     
       return (
